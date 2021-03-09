@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" class="js-focus-visible" data-js-focus-visible="">
+
+<head>
+
+  <!-- css files -->
+  <link rel="stylesheet" href="./public/css/desktop.css">
+  <link href="./Multi Step Form_files/main-7b78720.z.css" rel="stylesheet" media="screen" type="text/css">
+  <link rel="stylesheet" href="./public/css/common.css">
+
+</head>
+
+<body class="lp-pom-body lp-convertable-page">
+
+  <div class="lp-element lp-pom-root" id="lp-pom-root">
+    <div id="lp-pom-root-color-overlay"></div>
+    <div class="lp-positioned-content">
+      <div class="lp-element lp-code" id="lp-code-12">
+
+        <div class="container">
+          <form id="Form1" style="left: 40px;">
+            <h3>What kind of student are you?</h3>
+
+            <div class="answerbox">
+
+              <input type="radio" name="answer" id="q1a1">
+              <label for="q1a1" onclick="javascript:localStorage.setItem('q1', 'Highschool');">
+                <img src="https://i.imgur.com/ixoFvbm.png">
+                <p>High School</p>
+              </label>
+
+              <input type="radio" name="answer" id="q1a2">
+              <label for="q1a2" onclick="javascript:localStorage.setItem('q1', 'Undergraduate');">
+                <img src="https://i.imgur.com/3V6ZGHM.png">
+                <p>Undergraduate</p>
+              </label>
+              <input type="radio" name="answer" id="q1a3">
+              <label for="q1a3" onclick="javascript:localStorage.setItem('q1', 'Transfer Student');">
+                <img src="https://i.imgur.com/mAgUr4W.png">
+                <p>Transfer Student</p>
+              </label>
+
+              <input type="radio" name="answer" id="q1a4">
+              <label for="q1a4" onclick="javascript:localStorage.setItem('q1', 'Graduate Student');">
+                <img src="https://i.imgur.com/KJbEslQ.png">
+                <p>Graduate Student</p>
+              </label>
+
+
+            </div>
+
+            <div class="btn-box">
+              <button type="button" id="Next1">Next</button>
+            </div>
+          </form>
+
+          <form id="Form2" style="left: 450px;">
+            <h3>I'm trying to find information about</h3>
+
+            <div class="answerbox">
+
+              <input type="radio" name="answer" id="q2a1">
+              <label for="q2a1" onclick="javascript:localStorage.setItem('q2', 'Financial Aid');">
+                <img src="https://i.imgur.com/N4yskOt.png">
+                <p>Financial Aid</p>
+              </label>
+
+              <input type="radio" name="answer" id="q2a2">
+              <label for="q2a2" onclick="javascript:localStorage.setItem('q2', 'Scholarships');">
+                <img src="https://i.imgur.com/wASp4Nb.png">
+                <p>Scholarships</p>
+              </label>
+
+              <input type="radio" name="answer" id="q2a3">
+              <label for="q2a3" onclick="javascript:localStorage.setItem('q2', 'Campus Visits');">
+                <img src="https://i.imgur.com/YQJrnDJ.png">
+                <p>Campus Visits</p>
+              </label>
+
+              <input type="radio" name="answer" id="q2a4">
+              <label for="q2a4" onclick="javascript:localStorage.setItem('q2', 'Other');">
+                <img src="https://i.imgur.com/XHrZQB6.png">
+                <p>Other</p>
+              </label>
+
+            </div>
+
+            <div class="btn-box">
+              <button type="button" id="Back1">Back</button>
+              <button type="button" id="Next2">Next</button>
+            </div>
+          </form>
+
+          <form id="Form3" style="left: 450px;">
+            <h3>What year would you start at Marietta College?</h3>
+            <div class="checkboxes">
+              <p>
+                <input type="checkbox" value="Yes" id="test1" name="fall2021"
+                  onclick="javascript:localStorage.setItem('q3', 'fall2021');">
+                <label for="test1">Fall 2021</label>
+              </p>
+              <p>
+                <input type="checkbox" value="Yes" id="test2" name="spring2022"
+                  onclick="javascript:localStorage.setItem('q3', 'spring2022');">
+                <label for="test2">Spring 2022</label>
+              </p>
+              <p>
+                <input type="checkbox" value="Yes" id="test3" name="fall2022"
+                  onclick="javascript:localStorage.setItem('q3', 'fall2022');">
+                <label for="test3">Fall 2022</label>
+              </p>
+              <p>
+                <input type="checkbox" value="Yes" id="test4" name="spring2023"
+                  onclick="javascript:localStorage.setItem('q3', 'spring2023');">
+                <label for="test4">Spring 2023</label>
+              </p>
+            </div>
+
+
+
+            <div class="btn-box">
+              <button type="button" id="Back2">Back</button>
+              <button type="button" id="Next3">Next</button>
+            </div>
+          </form>
+
+          <form id="Form4">
+            <h3></h3>
+            <input type="text" placeholder="First Name" id="fname"
+              onchange="javascript:localStorage.setItem('fname', document.getElementById('fname').value);" required="">
+            <input type="text" placeholder="Last Name" id="lname"
+              onchange="javascript:localStorage.setItem('lname', document.getElementById('lname').value);" required="">
+            <input type="text" placeholder="Email" id="email"
+              onchange="javascript:localStorage.setItem('email', document.getElementById('email').value);" required="">
+            <input type="text" placeholder="Phone Number" id="phone"
+              onchange="javascript:localStorage.setItem('phone', document.getElementById('phone').value);" required="">
+
+          </form>
+
+
+
+          <div class="step-row">
+            <div id="progress" style="width: 90px;"></div>
+            <div class="step-col"><small>•</small></div>
+            <div class="step-col"><small>•</small></div>
+            <div class="step-col"><small>•</small></div>
+            <div class="step-col"><small>•</small></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="lp-element lp-pom-form has-axis" id="lp-pom-form-17">
+        <form>
+          <!-- <form
+          action="https://e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/fsg?pageId=f980614e-503a-473c-aaed-aae28cc642a2&amp;variant=a"
+          method="POST"><input type="hidden" name="pageId" value="f980614e-503a-473c-aaed-aae28cc642a2"><input
+            type="hidden" name="pageVariant" value="a"> -->
+          <div class="fields">
+            <div class="lp-pom-form-field single-line-text" id="container_hidden">
+              <input id="hidden" name="hidden" type="text" class="ub-input-item single text form_elem_hidden"
+                style="display: none;">
+            </div>
+            <input id="question1" name="question1" type="hidden" class="hidden" value="">
+            <input id="question2" name="question2" type="hidden" class="hidden" value="">
+            <input id="question3" name="question3" type="hidden" class="hidden" value="">
+            <input id="firstname" name="firstname" type="hidden" class="hidden" value="">
+            <input id="lastname" name="lastname" type="hidden" class="hidden" value="">
+            <input id="electronicMail" name="electronicMail" type="hidden" class="hidden" value="">
+            <input id="phoneNumber" name="phoneNumber" type="hidden" class="hidden" value="">
+            <input id="response_answer" name="response_answer" type="hidden" class="hidden" value="">
+          </div>
+          <button style="display: none;" class="lp-element lp-pom-button" id="lp-pom-button-18" type="submit" disabled="disabled">
+            <span class="label"><strong>Submit</strong>
+            </span>
+          </button>
+        </form>
+      </div>
+      <div class="lp-element lp-pom-box" id="lp-pom-box-22">
+        <div id="lp-pom-box-22-color-overlay"></div>
+        <div class="lp-element lp-pom-image" id="lp-pom-image-26">
+          <div class="lp-pom-image-container" style="overflow: hidden;"><img
+              src="./Multi Step Form_files/2a5a1b25-group-1_10d40d50ag0cg02a00p028.png" alt="" loading="eager"
+              data-src-desktop-1x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/2a5a1b25-group-1_10d40d50ag0cg02a00p028.png"
+              data-src-desktop-2x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/2a5a1b25-group-1_10q80qa0kw0ow04k01e028.png"
+              data-src-desktop-3x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/2a5a1b25-group-1_10000000m50qb04u01h028.png"
+              data-src-mobile-1x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/2a5a1b25-group-1_10b60b508w05z02a03v028.png"
+              data-src-mobile-2x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/2a5a1b25-group-1_10mc0ma0hs0by04k07q028.png"
+              data-src-mobile-3x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/2a5a1b25-group-1_10000000m40ew05o09n028.png"
+              srcset="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/2a5a1b25-group-1_10d40d50ag0cg02a00p028.png 1x, http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/2a5a1b25-group-1_10q80qa0kw0ow04k01e028.png 2x, http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/2a5a1b25-group-1_10000000m50qb04u01h028.png 3x">
+          </div>
+        </div>
+        <div class="lp-element lp-pom-box" id="lp-pom-box-27">
+          <div id="lp-pom-box-27-color-overlay"></div>
+          <div class="lp-element lp-pom-image" id="lp-pom-image-28">
+            <div class="lp-pom-image-container" style="overflow: hidden;"><img
+                src="./Multi Step Form_files/91a67218-marietta-logo_104x00w000000000000028.png" alt="" loading="eager"
+                data-src-desktop-1x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/91a67218-marietta-logo_104x00w000000000000028.png"
+                data-src-desktop-2x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/91a67218-marietta-logo_109u01s000000000000028.png"
+                data-src-desktop-3x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/91a67218-marietta-logo_10er02o000000000000028.png"
+                data-src-mobile-1x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/91a67218-marietta-logo_104x00w000000000000028.png"
+                data-src-mobile-2x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/91a67218-marietta-logo_109u01s000000000000028.png"
+                data-src-mobile-3x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/91a67218-marietta-logo_10er02o000000000000028.png"
+                srcset="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/91a67218-marietta-logo_104x00w000000000000028.png 1x, http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/91a67218-marietta-logo_109u01s000000000000028.png 2x, http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/91a67218-marietta-logo_10er02o000000000000028.png 3x">
+            </div>
+          </div>
+        </div>
+        <div class="lp-element lp-pom-image" id="lp-pom-image-29">
+          <div class="lp-pom-image-container" style="overflow: hidden;"><img
+              src="./Multi Step Form_files/fd36027e-well-help-you-find-what-youre-looking-for_109801s000000000000028.png"
+              alt="" loading="eager"
+              data-src-desktop-1x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/fd36027e-well-help-you-find-what-youre-looking-for_109801s000000000000028.png"
+              data-src-desktop-2x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/fd36027e-well-help-you-find-what-youre-looking-for_10ig03k000000000000028.png"
+              data-src-desktop-3x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/fd36027e-well-help-you-find-what-youre-looking-for_10ro05c000000000000028.png"
+              data-src-mobile-1x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/fd36027e-well-help-you-find-what-youre-looking-for_106z01c000000000000028.png"
+              data-src-mobile-2x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/fd36027e-well-help-you-find-what-youre-looking-for_10dy02o000000000000028.png"
+              data-src-mobile-3x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/fd36027e-well-help-you-find-what-youre-looking-for_10kx040000000000000028.png"
+              srcset="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/fd36027e-well-help-you-find-what-youre-looking-for_109801s000000000000028.png 1x, http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/fd36027e-well-help-you-find-what-youre-looking-for_10ig03k000000000000028.png 2x, http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/fd36027e-well-help-you-find-what-youre-looking-for_10ro05c000000000000028.png 3x">
+          </div>
+        </div>
+        <div class="lp-element lp-pom-image" id="lp-pom-image-33">
+          <div class="lp-pom-image-container" style="overflow: hidden;"><img
+              src="./Multi Step Form_files/da89cf39-let-us-help-you-find-the-right-thing-_107k01o000000000000028.png"
+              alt="" loading="eager"
+              data-src-desktop-1x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/da89cf39-let-us-help-you-find-the-right-thing-_107k01o000000000000028.png"
+              data-src-desktop-2x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/da89cf39-let-us-help-you-find-the-right-thing-_10f403c000000000000028.png"
+              data-src-desktop-3x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/da89cf39-let-us-help-you-find-the-right-thing-_10mo050000000000000028.png"
+              data-src-mobile-1x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/da89cf39-let-us-help-you-find-the-right-thing-_107k01o000000000000028.png"
+              data-src-mobile-2x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/da89cf39-let-us-help-you-find-the-right-thing-_10f403c000000000000028.png"
+              data-src-mobile-3x="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/da89cf39-let-us-help-you-find-the-right-thing-_10mo050000000000000028.png"
+              srcset="http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/da89cf39-let-us-help-you-find-the-right-thing-_107k01o000000000000028.png 1x, http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/da89cf39-let-us-help-you-find-the-right-thing-_10f403c000000000000028.png 2x, http://d9hhrg4mnvzow.cloudfront.net/e3de96552012407faac33a81ccd3d69d.pages.ubembed.com/f980614e-503a-473c-aaed-aae28cc642a2/da89cf39-let-us-help-you-find-the-right-thing-_10mo050000000000000028.png 3x">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lp-element lp-pom-block" id="lp-pom-block-8">
+      <div id="lp-pom-block-8-color-overlay"></div>
+      <div class="lp-pom-block-content"></div>
+    </div>
+  </div>
+
+  <script src="./public/js/jquery-3.6.0.min.js"></script>
+  <script src="./public/js/button-triggers.js"></script>
+  <script src="./public/js/script.js"></script>
+  <!-- <script src="./public/js/script2.js"></script> -->
+
+  <!-- <script async="" src="./Multi Step Form_files/main.bundle-5c6e41c.z.js" type="text/javascript"></script> -->
+
+</body>
+
+</html>
