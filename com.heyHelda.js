@@ -15,7 +15,7 @@ function onLoadHelda() {
 <div class="wrapper">
   <div class="hh-iframe-wrapper">
     <button class="hh-mdl-close" type="button"><div class="close-ico">x</div></button>
-    <iframe class="hh-mdl-iframe" frameBorder="0" src="./templates/helda-modal.html"
+    <iframe class="hh-mdl-iframe" frameBorder="0" src="https://visnuzibtek.github.io/heyHelda/templates/helda-modal.html"
       style="width: 100% !important; height: 100% !important;"></iframe>
   </div>
 </div>
