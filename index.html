@@ -18,6 +18,8 @@
     <div>
       Work on custom script test
     </div>
+    <button id="clipBtn" class="clipboard">Click to copy the below script</button>
+    <p id="urli">&#60;script src="https://visnuzibtek.github.io/heyHalda/com.heyHelda.js"&#62;&#60;&#47;script&#62;</p>
   </div>
   <div class="waves">
     <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -38,6 +40,20 @@
     </svg>
   </div>
   <!-- <script src="com.heyHelda.js"></script> -->
+
+  <script>
+
+    document.getElementById("clipBtn").addEventListener("click", function () {
+      const text = '\<script src=\"https://visnuzibtek.github.io/heyHalda/com.heyHelda.js\"\>\<\/script\>';
+      navigator.clipboard.writeText(text).then(function () {
+        document.getElementById('urli').innerText = 'Script copied';
+      }, function (err) {
+        document.getElementById('urli').innerText = 'Couldn\'t copy script';
+        console.error('Async: Could not copy text: ', err);
+      });
+    });
+
+  </script>
 </body>
 
 </html>
