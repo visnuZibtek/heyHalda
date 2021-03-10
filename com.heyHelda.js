@@ -25,7 +25,7 @@ function onLoadHelda() {
 </div>`;
 
     setTimeout(() => {
-      document.body.appendChild(elem);
+      document.body.appendChild(heldaContainer);
       resolve(true);
     }, 1000);
   })
