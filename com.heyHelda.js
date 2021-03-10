@@ -1,3 +1,5 @@
+var heldaContainer;
+
 function onLoadHelda() {
 
   const head = document.head || document.getElementsByTagName('head')[0],
@@ -8,13 +10,13 @@ function onLoadHelda() {
   if (style.styleSheet) style.styleSheet.cssText = css; // This is required for IE8 and below.
   else style.appendChild(document.createTextNode(css));
 
-  const elem = document.createElement('div');
-  elem.className = 'heyhelda-container';
-  elem.innerHTML = `<div class="heyHelda-body">
+  heldaContainer = document.createElement('div');
+  heldaContainer.className = 'heyhelda-container';
+  heldaContainer.innerHTML = `<div class="heyHelda-body">
 <div class="backdrop"></div>
 <div class="wrapper">
   <div class="hh-iframe-wrapper">
-    <button class="hh-mdl-close" type="button"><div class="close-ico">x</div></button>
+    <button id="mdlClose" class="hh-mdl-close" type="button"><div class="close-ico">x</div></button>
     <iframe class="hh-mdl-iframe" frameBorder="0" src="https://visnuzibtek.github.io/heyHelda/templates/helda-modal.html"
       style="width: 100% !important; height: 100% !important;"></iframe>
   </div>
@@ -25,6 +27,13 @@ function onLoadHelda() {
     document.body.appendChild(elem), 1000);
 }
 
+function intiateCloseEvent() {
+  document.getElementById('mdlClose').addEventListener('click', () => {
+    heldaContainer.innerHTML = `<div class="heyHelda-body"></div>`;
+  })
+}
+
 window.onload = function () { // same as window.addEventListener('load', (event) => {
   onLoadHelda();
+  intiateCloseEvent();
 };
