@@ -95,5 +95,5 @@ function onSave() {
 
 window.addEventListener('message', receiver, false);
 function receiver(e) {
-    console.log('hello')
+    console.log('pussy')
 }
