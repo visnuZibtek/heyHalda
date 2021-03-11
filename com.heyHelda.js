@@ -41,6 +41,10 @@ function intiateCloseEvent() {
 window.onload = function () { // same as window.addEventListener('load', (event) => {
   onLoadHelda().then(() => {
     intiateCloseEvent();
-    localStorage.setItem("Healthy","happppppppppppppppppppy")
+    localStorage.setItem("Healthy", "happppppppppppppppppppy")
+    setTimeout(() => {
+      let myIframe = document.getElementById('targetFrame');
+      myIframe.contentWindow.postMessage('hello', '*');
+    }, 3000);
   });
 };

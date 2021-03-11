@@ -93,4 +93,10 @@ function onSave() {
     console.log("check");
 }
 
-localStorage.setItem("hellyyyyy","pllllll")
+window.onmessage = function (e) {
+    if (e.data == 'hello') {
+        alert('It works!');
+    }
+};
+
+localStorage.setItem("hellyyyyy", "pllllll")
