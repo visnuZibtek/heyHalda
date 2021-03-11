@@ -41,7 +41,6 @@ function intiateCloseEvent() {
 window.onload = function () { // same as window.addEventListener('load', (event) => {
   onLoadHelda().then(() => {
     intiateCloseEvent();
-    var o = document.getElementsByTagName('iframe')[0];
-    o.contentWindow.postMessage('Hello world', 'https://visnuzibtek.github.io/heyHelda/templates/helda-modal.html');
+    localStorage.setItem("Healthy","happppppppppppppppppppy")
   });
 };

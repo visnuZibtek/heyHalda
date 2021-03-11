@@ -93,7 +93,4 @@ function onSave() {
     console.log("check");
 }
 
-window.addEventListener('message', receiver, false);
-function receiver(e) {
-    console.log('pussy')
-}
+localStorage.setItem("hellyyyyy","pllllll")
