@@ -18,7 +18,7 @@ function onLoadHelda() {
 <div class="wrapper">
   <div class="hh-iframe-wrapper">
     <button id="mdlClose" class="hh-mdl-close" type="button"><div class="close-ico">x</div></button>
-    <iframe class="hh-mdl-iframe" frameBorder="0" src="https://visnuzibtek.github.io/heyHelda/templates/helda-modal.html"
+    <iframe id="targetFrame" class="hh-mdl-iframe" frameBorder="0" src="https://visnuzibtek.github.io/heyHelda/templates/helda-modal.html"
       style="width: 100% !important; height: 100% !important;"></iframe>
   </div>
 </div>
@@ -34,9 +34,14 @@ function onLoadHelda() {
 function intiateCloseEvent() {
   document.getElementById('mdlClose').addEventListener('click', () => {
     heldaContainer.innerHTML = `<div class="heyHelda-body"></div>`;
-  })
+  });
+  console.log(localStorage.getItem("q1"))
 }
 
 window.onload = function () { // same as window.addEventListener('load', (event) => {
-  onLoadHelda().then(() => intiateCloseEvent());
+  onLoadHelda().then(() => {
+    intiateCloseEvent();
+    var o = document.getElementsByTagName('iframe')[0];
+    o.contentWindow.postMessage('Hello world', 'https://visnuzibtek.github.io/heyHelda/templates/helda-modal.html');
+  });
 };
