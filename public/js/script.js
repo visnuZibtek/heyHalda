@@ -155,7 +155,7 @@ function onSave() {
 }
 
 function postFormData(formDetails) {
-    $.post("http://localhost:3000/formDetails", formDetails, function (data, status) {
+    $.post("https://b99252d07753.ngrok.io", formDetails, function (data, status) {
         console.log("Data: " + data + "\nStatus: " + status);
     });
 }
