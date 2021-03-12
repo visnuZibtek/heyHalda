@@ -140,7 +140,7 @@ function onSave() {
     for (const [name, value] of formData) {
         data[name] = value;
     }
-    data['clientMachine'] = {
+    data['clientMachine'] = JSON.stringify({
         date: new Date(),
         agent: navigator.userAgent,
         screen: {
@@ -154,13 +154,13 @@ function onSave() {
             innerHeight: window.innerHeight,
         },
         hasPlugins: 'length' in navigator.plugins && navigator.plugins.length > 0,
-    }
+    })
     postFormData(data);
     setTimeout(() => fireTopLevelEvent('success'), 2000);
 }
 
 function postFormData(formDetails) {
-    $.post("https://79895a02d1e0.ngrok.io", formDetails, function (data, status) {
+    $.post("http://localhost:3000/formDetails", formDetails, function (data, status) {
         console.log("Data: " + data + "\nStatus: " + status);
     });
 }
