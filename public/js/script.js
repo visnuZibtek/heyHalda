@@ -90,6 +90,10 @@ function showhideFields() {
     }
 }
 
+function onSubmit(event) {
+    console.log(event);
+}
+
 function onSave() {
     let question1 = document.querySelector('#question1');
     let question2 = document.querySelector('#question2');
