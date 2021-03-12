@@ -150,12 +150,19 @@ function onSave() {
         },
         hasPlugins: 'length' in navigator.plugins && navigator.plugins.length > 0,
     }
+    console.log(data);
+    fireTopLevelEvent('success');
 }
 
-window.top.postMessage('hello', '*')
+const fireTopLevelEvent = (message) => {
+    window.top.postMessage(message, '*')
+}
 
-// window.onmessage = function (e) {
-//     if (e.data == 'mdlClose') {
-//         onSave();
-//     }
-// };
+
+(function addEventListner() {
+    window.onmessage = (e) => {
+        if (e.data == 'mdlClose') {
+            onSave();
+        }
+    };
+})();

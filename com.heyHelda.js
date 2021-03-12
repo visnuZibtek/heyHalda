@@ -33,24 +33,30 @@ function onLoadHelda() {
 
 function intiateCloseEvent() {
   document.getElementById('mdlClose').addEventListener('click', () => {
-    heldaContainer.innerHTML = `<div class="heyHelda-body"></div>`;
+    throwCloseEvent();
   });
-  console.log(localStorage.getItem("q1"))
 }
+
+const throwCloseEvent = () => {
+  const heldaFrame = document.getElementById('targetFrame');
+  heldaFrame.contentWindow.postMessage('mdlClose', '*');
+}
+
+const addEventListner = () => {
+  window.onmessage = (e) => {
+    if (e.data == 'success') {
+      heldaContainer.innerHTML = `<div class="heyHelda-body"></div>`;
+    }
+  };
+}
+
 
 window.onload = function () { // same as window.addEventListener('load', (event) => {
   onLoadHelda().then(() => {
     intiateCloseEvent();
-    // setTimeout(() => {
-    //   let myIframe = document.getElementById('targetFrame');
-    //   myI;frame.contentWindow.postMessage('hello', '*');
-    // }, 3000)
+    addEventListner();
   });
 };
 
 
-window.onmessage = function (e) {
-  if (e.data == 'hello') {
-    alert('It works!');
-  }
-};
+
