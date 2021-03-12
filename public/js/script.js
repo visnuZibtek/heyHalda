@@ -90,8 +90,9 @@ function showhideFields() {
     }
 }
 
-function onSubmit(event) {
-    console.log(event);
+function submitDetails(event) {
+    event.preventDefault();
+    onSave();
 }
 
 function onSave() {

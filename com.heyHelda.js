@@ -45,7 +45,7 @@ const throwCloseEvent = () => {
 const addEventListner = () => {
   window.onmessage = (e) => {
     if (e.data == 'success') {
-      heldaContainer.innerHTML = `<div class="heyHelda-body"></div>`;
+      // heldaContainer.innerHTML = `<div class="heyHelda-body"></div>`;
     }
   };
 }
