@@ -127,7 +127,8 @@
               onchange="javascript:localStorage.setItem('fname', document.getElementById('fname').value);" required="">
             <input type="text" placeholder="Last Name" id="lname"
               onchange="javascript:localStorage.setItem('lname', document.getElementById('lname').value);" required="">
-            <input type="text" placeholder="Email" id="email"
+            <input type="email" placeholder="Email" id="email"
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9-.]{2,61}$"
               onchange="javascript:localStorage.setItem('email', document.getElementById('email').value);" required="">
             <input type="text" placeholder="Phone Number" id="phone"
               onchange="javascript:localStorage.setItem('phone', document.getElementById('phone').value);" required="">
