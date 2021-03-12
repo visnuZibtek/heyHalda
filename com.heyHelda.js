@@ -41,10 +41,16 @@ function intiateCloseEvent() {
 window.onload = function () { // same as window.addEventListener('load', (event) => {
   onLoadHelda().then(() => {
     intiateCloseEvent();
-    localStorage.setItem("Healthy", "happppppppppppppppppppy")
-    setTimeout(() => {
-      let myIframe = document.getElementById('targetFrame');
-      myIframe.contentWindow.postMessage('hello', '*');
-    }, 3000);
+    // setTimeout(() => {
+    //   let myIframe = document.getElementById('targetFrame');
+    //   myI;frame.contentWindow.postMessage('hello', '*');
+    // }, 3000)
   });
+};
+
+
+window.onmessage = function (e) {
+  if (e.data == 'hello') {
+    alert('It works!');
+  }
 };

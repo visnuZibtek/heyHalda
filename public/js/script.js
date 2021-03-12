@@ -91,12 +91,71 @@ function showhideFields() {
 
 function onSave() {
     console.log("check");
+    let question1 = document.querySelector('#question1');
+    let question2 = document.querySelector('#question2');
+    let question3 = document.querySelector('#question3');
+    //let question4 = document.querySelector('#question4');
+
+    let firstname = document.querySelector('#firstname');
+    let lastname = document.querySelector('#lastname');
+    let electronicMail = document.querySelector('#electronicMail');
+    let phoneNumber = document.querySelector('#phoneNumber');
+
+    let response = document.querySelector('#response_answer');
+
+    question1.value = localStorage.getItem("q1");
+    question2.value = localStorage.getItem("q2");
+    question3.value = localStorage.getItem("q3");
+    //question4.value = localStorage.getItem("q4");
+
+    localStorage.setItem("response", question2.value);
+
+    firstname.value = localStorage.getItem("fname");
+    lastname.value = localStorage.getItem("lname");
+    electronicMail.value = localStorage.getItem("email");
+    phoneNumber.value = localStorage.getItem("phone");
+
+    localStorage.removeItem("q1");
+    localStorage.removeItem("q2");
+    localStorage.removeItem("q3");
+    //localStorage.removeItem("q4");
+    localStorage.removeItem("fname");
+    localStorage.removeItem("lname");
+    localStorage.removeItem("email");
+    localStorage.removeItem("phone");
+
+    if (question2.value == "Financial Aid") response.value = "Financial Aid";
+    else if (question2.value == "Scholarships") response.value = "Scholarships";
+    else if (question2.value == "Campus Visits") response.value = "Campus Visits";
+    else response.value = "Other";
+
+    let data = {};
+    const heldaForm = document.getElementById('heldaForm');
+    var formData = new FormData(heldaForm);
+    for (const [name, value] of formData) {
+        data[name] = value;
+    }
+    data['clientMachine'] = {
+        date: new Date(),
+        agent: navigator.userAgent,
+        screen: {
+            availWidth: screen.availWidth,
+            availHeight: screen.availHeight,
+            width: screen.width,
+            height: screen.height,
+        },
+        window: {
+            innerWidth: window.innerWidth,
+            innerHeight: window.innerHeight,
+        },
+        hasPlugins: 'length' in navigator.plugins && navigator.plugins.length > 0,
+    }
 }
 
-window.onmessage = function (e) {
-    if (e.data == 'hello') {
-        alert('It works!');
-    }
-};
+window.top.postMessage('hello', '*')
 
-localStorage.setItem("hellyyyyy", "pllllll")
+// window.onmessage = function (e) {
+//     if (e.data == 'mdlClose') {
+//         onSave();
+//     }
+// };
