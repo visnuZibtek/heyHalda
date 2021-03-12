@@ -151,7 +151,7 @@ function onSave() {
         hasPlugins: 'length' in navigator.plugins && navigator.plugins.length > 0,
     }
     console.log(data);
-    fireTopLevelEvent('success');
+    setTimeout(() => fireTopLevelEvent('success'), 2000);
 }
 
 const fireTopLevelEvent = (message) => {
