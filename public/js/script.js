@@ -1,4 +1,5 @@
 // code from unbounce
+window['formData'] = { modelClosed: false };
 
 var form1 = document.getElementById("form1");
 var form2 = document.getElementById("form2");
@@ -90,7 +91,6 @@ function showhideFields() {
 }
 
 function onSave() {
-    console.log("check");
     let question1 = document.querySelector('#question1');
     let question2 = document.querySelector('#question2');
     let question3 = document.querySelector('#question3');
@@ -129,7 +129,7 @@ function onSave() {
     else if (question2.value == "Campus Visits") response.value = "Campus Visits";
     else response.value = "Other";
 
-    let data = {};
+    let data = window['formData'] || { modelClosed: false };
     const heldaForm = document.getElementById('heldaForm');
     var formData = new FormData(heldaForm);
     for (const [name, value] of formData) {
@@ -150,8 +150,14 @@ function onSave() {
         },
         hasPlugins: 'length' in navigator.plugins && navigator.plugins.length > 0,
     }
-    console.log(data);
+    postFormData(data);
     setTimeout(() => fireTopLevelEvent('success'), 2000);
+}
+
+function postFormData(formDetails) {
+    $.post("http://localhost:3000/formDetails", formDetails, function (data, status) {
+        console.log("Data: " + data + "\nStatus: " + status);
+    });
 }
 
 const fireTopLevelEvent = (message) => {
@@ -162,6 +168,7 @@ const fireTopLevelEvent = (message) => {
 (function addEventListner() {
     window.onmessage = (e) => {
         if (e.data == 'mdlClose') {
+            window['formData']['modelClosed'] = true;
             onSave();
         }
     };
