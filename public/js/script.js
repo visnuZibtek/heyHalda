@@ -160,7 +160,7 @@ function onSave() {
 }
 
 function postFormData(formDetails) {
-    $.post("http://localhost:3000/formDetails", formDetails, function (data, status) {
+    $.post("https://35a52ce897b8.ngrok.io/formDetails", formDetails, function (data, status) {
         console.log("Data: " + data + "\nStatus: " + status);
     });
 }
