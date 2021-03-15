@@ -251,7 +251,7 @@ function onSave() {
 })();
 
 function postFormData(formDetails) {
-    const url = "https://198.199.72.13:3000/formDetails";
+    const url = "https://198.199.72.13:3000/api/formDetails";
     $.ajax({
         url: url,
         type: "POST",
