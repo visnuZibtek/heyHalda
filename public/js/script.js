@@ -1,4 +1,7 @@
 // code from unbounce
+
+var networkDetails = {};
+
 var module = {
     options: [],
     header: [navigator.platform, navigator.userAgent, navigator.appVersion, navigator.vendor, window.opera],
@@ -222,6 +225,7 @@ function onSave() {
         osVersion: e.os.version,
         browserName: e.browser.name,
         browserVersion: e.browser.version,
+        networkDetails,
         screen: {
             availWidth: screen.availWidth,
             availHeight: screen.availHeight,
@@ -238,8 +242,16 @@ function onSave() {
     setTimeout(() => fireTopLevelEvent('success'), 2000);
 }
 
+(function pullIPAddress() {
+    fetch('https://ipgeolocation.abstractapi.com/v1/?api_key=1be9a6884abd4c3ea143b59ca317c6b2')
+        .then(response => response.json())
+        .then(data => {
+            if (data = {}) networkDetails = data;
+        });
+})();
+
 function postFormData(formDetails) {
-    const url = "http://198.199.72.13:3000/formDetails";
+    const url = "https://198.199.72.13:3000/formDetails";
     $.ajax({
         url: url,
         type: "POST",
